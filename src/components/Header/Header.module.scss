@@ -2,8 +2,6 @@
   height: 90px;
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
-  border-bottom: 1px solid
-    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
 .text {
@@ -18,6 +16,10 @@
 
 .top {
     display: flex;
+}
+
+.sub {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -25,6 +27,10 @@
 
 }
 
-.searchbar {
-    background-color: var(--mantine-color-dark-4);
+.search {
+    background-color: var(--mantine-color-gray-3);
+    border: 2px solid transparent; /* Start with a transparent border */
+    border-radius: 20px;
+    padding: 5px;
+    width: 300px;
 }
