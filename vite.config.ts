@@ -1,3 +1,4 @@
+import path from "node:path";
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -10,4 +11,11 @@ export default defineConfig({
     react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
     tailwindcss(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "${path.join(process.cwd(), "src/_mantine").replace(/\\/g, "/")}";`,
+      },
+    },
+  },
 })
