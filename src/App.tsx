@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
-import { useAtom } from "jotai";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
