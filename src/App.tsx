@@ -3,13 +3,20 @@ import { MantineProvider } from "@mantine/core";
 import { useAtom } from "jotai";
 
 import Home from "./pages/HomePage";
+import Layout from "./layouy/Layout";
 
 
 const App = () => {
   return (
-    <div>
-
-    </div>
+    <MantineProvider>
+      <Layout>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </Layout>
+    </MantineProvider>
   );
 }
 

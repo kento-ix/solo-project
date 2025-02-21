@@ -1,6 +1,16 @@
+import {
+    Box,
+} from "@mantine/core";
+import classes from "./Header.module.scss";
+
+
 const Header = () => {
     return(
-        <div></div>
+        <Box pb={0}>
+            <header className={classes.header}>
+                
+            </header>
+        </Box>
     );
 }
 
