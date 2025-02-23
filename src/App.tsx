@@ -11,7 +11,11 @@ const App = () => {
   return (
     <MantineProvider>
       <Layout>
-        <Home/>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+          </Routes>
+        </Router>
       </Layout>
     </MantineProvider>
   );

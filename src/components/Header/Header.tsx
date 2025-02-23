@@ -1,11 +1,4 @@
-import {
-  Box,
-  Burger,
-  Drawer,
-  Group,
-  ScrollArea,
-  Text,
-} from "@mantine/core";
+import { Box, Burger, Drawer, Group, ScrollArea, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.scss";
 
@@ -22,9 +15,7 @@ const Header = () => {
   return (
     <Box pb={0}>
       <header className={classes.header}>
-        {/* ヘッダー全体 */}
         <Group h="100%" justify="space-between" align="center">
-          {/* 中央寄せ: ロゴ + サーチバー */}
           <Group className={classes.top} justify="center" align="center" w="100%">
             <Group className={classes.sub}>
               <Text onClick={navigateToHome} className={classes.text}>
@@ -34,19 +25,16 @@ const Header = () => {
             </Group>
           </Group>
 
-          {/* モバイル用バーガーメニュー (右上) */}
           <Group hiddenFrom="sm" style={{ position: 'absolute', right: '10px', top: '10px' }}>
             <Burger opened={drawerOpened} onClick={toggleDrawer} />
           </Group>
 
-          {/* デスクトップ用サイドバー */}
           <Group visibleFrom="sm">
             <SideBar />
           </Group>
         </Group>
       </header>
 
-      {/* モバイル用ドロワー */}
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
@@ -60,8 +48,7 @@ const Header = () => {
           <SideBar />
         </ScrollArea>
       </Drawer>
-</Box>
-
+    </Box>
   );
 };
 

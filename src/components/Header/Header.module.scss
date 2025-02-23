@@ -27,10 +27,33 @@
 
 }
 
+.searchForm {
+  position: relative;
+  width: 300px;
+}
+
 .search {
-    background-color: var(--mantine-color-gray-3);
-    border: 2px solid transparent; /* Start with a transparent border */
-    border-radius: 20px;
-    padding: 5px;
-    width: 300px;
+  background-color: var(--mantine-color-gray-3);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 5px 40px 5px 10px; /* Add space for the button */
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+}
+
+.searchButton {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555; /* Change icon color if needed */
+  padding: 5px;
+}
+
+.searchButton:hover {
+  color: #000; /* Darker on hover */
 }

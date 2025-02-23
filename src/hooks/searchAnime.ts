@@ -1,17 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Anime } from "../type/Anime";
 
-export interface Anime {
-  mal_id: number;
-  title: string;
-  images: {
-    jpg: {
-      image_url: string;
-    };
-  };
-}
-
-const useSearchAnime = (query: string) => {
+export default function useSearchAnime(query: string) {
   const [animeList, setAnimeList] = useState<Anime[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -36,7 +27,7 @@ const useSearchAnime = (query: string) => {
 
         setAnimeList(response.data.data);
       } catch (err) {
-        setError("アニメの取得に失敗しました");
+        setError("Failed to get anime");
       } finally {
         setLoading(false);
       }
@@ -47,5 +38,3 @@ const useSearchAnime = (query: string) => {
 
   return { animeList, loading, error };
 };
-
-export default useSearchAnime;
