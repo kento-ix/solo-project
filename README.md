@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Anime Info Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Anime Info Hub is a web application that allows users to explore currently airing anime and search for their favorite titles. Using the Jikan API, it provides up-to-date information, including titles, images, synopses, and air dates. The project was started to practice building modern React applications, integrate public APIs, and improve UI/UX design.
 
-Currently, two official plugins are available:
+## Features
+- **Search Anime** — Find any anime by title using the search bar.  
+- **On-Air Anime List** — View the most recent airing anime with images and titles.  
+- **Anime Details Page** — Click on any anime to view detailed information, including synopsis and air date.  
+- **Responsive Design** — Fully responsive for both desktop and mobile users.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running the Project locally
+1. **Clone this projrct locally**
+2. **Run npm install in your bash/ command line**
+3. **Run npm run dev in you bash/command line**
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Dev dependencies
+- React
+- Vite
+- Jikan API
+- Mantine
+- Jotai
+- Axios
+- React Router
+- SCSS
