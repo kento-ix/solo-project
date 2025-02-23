@@ -36,7 +36,7 @@
   background-color: var(--mantine-color-gray-3);
   border: 2px solid transparent;
   border-radius: 20px;
-  padding: 5px 40px 5px 10px; /* Add space for the button */
+  padding: 5px 40px 5px 10px; 
   width: 100%;
   font-size: 16px;
   outline: none;
@@ -50,10 +50,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: #555; /* Change icon color if needed */
+  color: #555; 
   padding: 5px;
 }
 
 .searchButton:hover {
-  color: #000; /* Darker on hover */
+  color: #000;
 }

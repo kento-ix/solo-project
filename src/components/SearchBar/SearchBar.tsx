@@ -6,11 +6,11 @@ import classes from "../Header/Header.module.scss";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [, setSearch] = useAtom(searchAtom);  // jotai の atom に書き込み
+  const [, setSearch] = useAtom(searchAtom);  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSearch(searchQuery); // グローバル状態に保存
+    setSearch(searchQuery); 
   };
 
   return (
