@@ -45,6 +45,8 @@ const Home = () => {
                   src={anime.images.jpg.image_url}
                   height={160}
                   alt={anime.title}
+                  className="cursor-pointer"
+                  onClick={() => window.location.href = `/anime/${anime.mal_id}`}
                 />
               </Card.Section>
 

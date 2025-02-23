@@ -5,7 +5,7 @@ import "@mantine/carousel/styles.css";
 
 import Home from "./pages/HomePage";
 import Layout from "./layouy/Layout";
-
+import AnimePage from "./pages/AnimePage";
 
 const App = () => {
   return (
@@ -14,6 +14,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path="/anime/:id" element={<AnimePage />} />
           </Routes>
         </Router>
       </Layout>
