@@ -16,14 +16,14 @@ a {
   color: #777;
   text-decoration: none;
   margin-bottom: 8px;
-  padding: 8px 16px; /* Added padding for better button-like appearance */
-  background-color: #e9e8e8; /* Gray background color */
-  border: 2px solid transparent; /* Start with a transparent border */
+  padding: 8px 16px; 
+  background-color: #e9e8e8; 
+  border: 2px solid transparent; 
   border-radius: 20px;
-  transition: color 0.2s ease, background-color 0.2s ease; /* Added transition for background color */
+  transition: color 0.2s ease, background-color 0.2s ease; 
 
   &:hover {
     color: #333;
-    background-color: #767575; /* Dark gray on hover */
+    background-color: #767575; 
   }
 }

@@ -14,9 +14,7 @@ import useSearchAnime from "../hooks/searchAnime";
 const Home = () => {
   const [searchQuery] = useAtom(searchAtom); 
 
-  const { animeList, loading, error } = searchQuery 
-    ? useSearchAnime(searchQuery) 
-    : useOnAirAnime(20); 
+  const { animeList, loading, error } = searchQuery ? useSearchAnime(searchQuery) : useOnAirAnime(20); 
 
   return (
     <div className="flex">
