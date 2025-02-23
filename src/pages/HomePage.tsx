@@ -31,30 +31,31 @@ const Home = () => {
         {error && <p className="text-red-500">{error}</p>}
 
         <div className="flex flex-wrap gap-5">
-          {animeList.map((anime) => (
-            <Card
-              key={anime.mal_id}
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-              className="w-48"
-            >
-              <Card.Section>
-                <Image
-                  src={anime.images.jpg.image_url}
-                  height={160}
-                  alt={anime.title}
-                  className="cursor-pointer"
-                  onClick={() => window.location.href = `/anime/${anime.mal_id}`}
-                />
-              </Card.Section>
+        {animeList.map((anime, index) => (
+          <Card
+            key={`${anime.mal_id}-${index}`}
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="w-48"
+          >
+            <Card.Section>
+              <Image
+                src={anime.images.jpg.image_url}
+                height={160}
+                alt={anime.title}
+                className="cursor-pointer"
+                onClick={() => window.location.href = `/anime/${anime.mal_id}`}
+              />
+            </Card.Section>
 
-              <Text className="text-center text-sm font-semibold">
-                {anime.title}
-              </Text>
-            </Card>
-          ))}
+            <Text className="text-center text-sm font-semibold">
+              {anime.title}
+            </Text>
+          </Card>
+        ))}
+
         </div>
       </div>
     </div>

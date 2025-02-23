@@ -1,25 +1,52 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { AnimeCard } from '../type/Anime';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Anime } from "../type/Anime";
 
-export default function useOnAirAnime(limit: number = 10) {
-  const [animeList, setAnimeList] = useState<AnimeCard[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+export default function useOnAirAnime(limit: number) {
+  const [animeList, setAnimeList] = useState<Anime[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
-    const fetchOnAirAnime = async () => {
+    let isMounted = true; 
+
+    const fetchAnime = async () => {
+      setLoading(true);
+      setError("");
+
       try {
-        const response = await axios.get(`https://api.jikan.moe/v4/top/anime?filter=airing&limit=${limit}`);
-        setAnimeList(response.data.data);
-      } catch (err) {
-        setError("Failed to get data");
+        const response = await axios.get(
+          `https://api.jikan.moe/v4/top/anime`,
+          {
+            params: {
+              filter: "airing",
+              limit: limit,
+            },
+          }
+        );
+
+        if (isMounted) {
+          setAnimeList(response.data.data);
+        }
+      } catch (err: any) {
+        if (err.response?.status === 429) {
+          setError("too many request");
+        } else {
+          setError("fail to get data");
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
-    fetchOnAirAnime();
+    const debounce = setTimeout(fetchAnime, 500);
+
+    return () => {
+      clearTimeout(debounce);
+      isMounted = false;
+    };
   }, [limit]);
 
   return { animeList, loading, error };
